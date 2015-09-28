@@ -9,6 +9,12 @@ docker pull kevoree/registry-replica
 docker run -it -p 8080:8080 kevoree/registry-replica
 ```
 
+or
+
+```sh
+docker run -it -p 8080:8080 -e CURL_REGISTRY=false kevoree/registry-replica # skip the replication
+```
+
 ### How does it work ?
 This image is based on `dockerfile/java:oracle-java8` and contains a compiled Jar-file of `kevoree-registry@5.0.0`  
 When started, a `cURL` command retrieves the current content of the official [Kevoree registry](http://registry.kevoree.org), 
